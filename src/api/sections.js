@@ -10,9 +10,10 @@ router.get('/:sectionId', async (req, res) => {
   try {
     const database = await connectToDatabase();
     const sections = database.collection('sections');
-    const cursor = sections.find({ name: sectionId });
+    const result = sections.find({ _id: sectionId });
 
-    await cursor.forEach((doc) => {
+
+    await result.forEach((doc) => {
       arr.push(doc);
     });
 
