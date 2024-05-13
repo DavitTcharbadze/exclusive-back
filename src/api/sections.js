@@ -4,7 +4,7 @@ const { connectToDatabase } = require('../services/database');
 const router = express.Router();
 
 router.get('/:sectionId', async (req, res) => {
-  const { sectionId } = req.params;
+  const sectionId = req.params;
   const arr = [];
 
   try {
